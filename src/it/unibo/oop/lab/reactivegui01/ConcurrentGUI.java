@@ -3,8 +3,6 @@ package it.unibo.oop.lab.reactivegui01;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.JButton;
@@ -47,19 +45,7 @@ public final class ConcurrentGUI extends JFrame {
         /*
          * Register a listener that stops it
          */
-        stop.addActionListener(new ActionListener() {
-            /**
-             * event handler associated to action event on button stop.
-             * 
-             * @param e
-             *            the action event that will be handled by this listener
-             */
-            @Override
-            public void actionPerformed(final ActionEvent e) {
-                // Agent should be final
-                agent.stopCounting();
-            }
-        });
+        stop.addActionListener(e -> agent.stopCounting());
     }
 
     /*
